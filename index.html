@@ -1,116 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Governance Accountability Tracker</title>
+    <title>Expozee - Governance Accountability Tracker</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
     <header>
-        <h1>Expozee</h1>
-        <p>A Governance Accountability Tracker</p>
-        <p>Report corruption, Misappropriation, Scandals and inefficiencies.</p>
+        <div class="header-content">
+            <div class="logo">
+                <img src="./uploads/expozee_purple.svg" alt="Expozee Logo">
+            </div>
+            <h1>A Governance Accountability Tracker</h1>
+        </div>
     </header>
 
-    <section id="sidebar">
-        <div class="search-filter">
-            <h2>Search & Filter</h2>
-            <div class="form-group">
-                <input type="text" id="searchInput" placeholder="Search reports...">
-            </div>
-            <div class="form-group">
-                <label for="filterOfficial">Filter by Official:</label>
-                <input type="text" id="filterOfficial" placeholder="Official name">
-            </div>
-            <div class="form-group">
-                <label for="filterCounty">Filter by County:</label>
-                <select id="filterCounty">
-                    <option value="">All Counties</option>
-                    <!-- Counties will be loaded via JavaScript -->
-                </select>
-            </div>
-            <button id="applyFilters">Apply Filters</button>
-            <button id="clearFilters">Clear Filters</button>
-        </div>
-        <h2>Report here!</h2>
-        <!-- Report Form -->
-        <form id="reportForm">
-            <div class="form-group">
-                <label for="issueType">Issue Type:</label>
-                <select id="issueType" required>
-                    <option value="">Select...</option>
-                    <option value="corruption">Corruption</option>
-                    <option value="failed_project">Stalled Project</option>
-                    <option value="mismanagement">Fund Mismanagement</option>
-                    <option value="scandal">Scandal</option>
-                    <option value="inefficiency">Inefficiency</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
+    <div class="container">
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <i class='fas fa-bullhorn'></i>
+                    <h3>Your Voice Can Fix Kenya!</h3>
+                    <p>Every reported issue brings us closer to accountable leadership. Document failures, corruption, or mismanagement—your report fuels change.</p>
+                </div>
+                <div class="hero-content">
+                    <i class='fas fa-eye-slash'></i>
+                    <h3>Expose It Anonymously, Safely.</h3>
+                    <p>Share evidence without fear. We protect your identity while holding leaders accountable.</p>
+                </div>
+                <div class="hero-content">
+                    <i class='fas fa-chart-line'></i>
+                    <h3>See Real Impact</h3>
+                    <p>Every reported issue brings us closer to accountable leadership. Document failures, corruption, or mismanagement—your report fuels change.</p>
+                </div>
+            </section>
+            <section class="slideshow">
+                <div class="slide active">
+                    <h2 class="slide-title"></h2>
+                    <p class="slide-description"></p>
+                    <div class="slide-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Jurisdiction:</span>
+                            <span class="meta-value slide-jurisdiction"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Date Reported:</span>
+                            <span class="meta-value slide-date"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Responsible Party:</span>
+                            <span class="meta-value slide-responsible"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Reported By:</span>
+                            <span class="meta-value slide-reporter"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-nav">
+                    <button class="prev">Previous</button>
+                    <button class="next">Next</button>
+                </div>
+            </section>
 
-            <div class="form-group">
-                <label for="issueTitle">Issue Title:</label>
-                <input type="text" id="issueTitle" placeholder="Issue Title" required>
-            </div>
+            <section class="all-reports">
+                <h2>All Reports</h2>
+                <div class="filters">
+                    <select id="date-filter">
+                        <option value="">Filter by Date</option>
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                    <select id="county-filter">
+                        <option value="">Filter by County</option>
+                    </select>
+                    <select id="responsible-filter">
+                        <option value="">Filter by Responsible Person</option>
+                    </select>
+                </div>
+                <ul class="report-list"></ul>
+            </section>
+        </main>
 
-            <div class="form-group">
-                <label for="officialName">Official Responsible:</label>
-                <input type="text" id="officialName" placeholder="Name" required>
-                <input type="text" id="officialPosition" placeholder="Position" required>
-            </div>
+        <aside class="sidebar">
+            <h2>Report an Issue</h2>
+            <form id="report-form">
+                <div class="form-group">
+                    <label for="anonymous-toggle">Post Anonymously</label>
+                    <label class="switch">
+                        <input type="checkbox" id="anonymous-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            
+                <div class="form-group user-details">
+                    <label for="user-name">Your Name (Optional)</label>
+                    <input type="text" id="user-name" placeholder="Your name">
+                </div>
+            
+                <div class="form-group user-details">
+                    <label for="user-email">Your Email (Optional)</label>
+                    <input type="email" id="user-email" placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <label for="issue-type">Issue Type</label>
+                    <select id="issue-type" required>
+                        <option value="">Select issue type</option>
+                        <option value="Corruption">Corruption</option>
+                        <option value="Stalled Project">Stalled Project</option>
+                        <option value="Fund mismanagement">Fund mismanagement</option>
+                        <option value="Scandal/illegality">Scandal/illegality</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="countyCode">County:</label>
-                <select id="countyCode" required>
-                    <option value="">Select County</option>
-                    <option value="national">National</option>
-                    <!-- Counties loaded via JavaScript -->
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required>
+                </div>
 
-             <div class="form-group">
-                <label for="description">Description:</label>
-                <div id="editor" style="height: 200px;"></div>
-                <textarea id="description" hidden required></textarea>
-            </div>
+                <div class="form-group">
+                    <label>Person Responsible</label>
+                    <input type="text" id="responsible-name" placeholder="Name" required>
+                    <input type="text" id="responsible-position" placeholder="Position" required>
+                </div>
 
-            <div class="form-group">
-                <label for="media">Evidence (Photos/Videos):</label>
-                <input type="file" id="media" accept="image/*, video/*" multiple>
-                <div id="mediaPreview"></div>
-            </div>
+                <div class="form-group">
+                    <label for="jurisdiction">Jurisdiction</label>
+                    <select id="jurisdiction" required>
+                        <option value="">Select county</option>
+                    </select>
+                </div>
 
-            <button type="submit">Submit Report</button>
-        </form>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <div id="description-editor"></div>
+                </div>
 
-        <!-- Data Management Buttons -->
-        <div class="data-actions">
-            <button id="exportBtn">Export Reports (JSON)</button>
-            <button id="importBtn">Import Reports</button>
-            <input type="file" id="importFile" accept=".json" style="display: none;">
-        </div>
-    </section>
+                <div class="form-group">
+                    <label for="evidence">Evidence (Documents, Photos, Videos)</label>
+                    <input type="file" id="evidence" multiple>
+                </div>
 
-    <section id="main-content">
-        <div class="container">
-            <!-- Reports List -->
-            <h2>📜 Reported Issues</h2>
-            <div id="reportsList"></div>
-        </div>
-    </section>
-
+                <button type="submit" class="submit-btn">Submit Report</button>
+            </form>
+        </aside>
+    </div>
     <footer>
-        <p>&copy; 2025 Expozee. All rights reserved.</p>
+        <p>&copy; 2025 - Expozee. All rights reserved.</p>
+        <div class="footer-accent"></div>
     </footer>
 
-    <!-- Load Quill first -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="./src/script.js"></script>
+    <script src="src/index.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,148 @@
+{
+  "reports": [
+    {
+      "id": "1",
+      "type": "Corruption",
+      "title": "KEMSA COVID-19 Funds Scandal",
+      "responsibleName": "Dr. Jonah Manjari",
+      "responsiblePosition": "Former KEMSA CEO",
+      "jurisdiction": "047-Nairobi",
+      "description": "Audit reveals KEMSA irregularly awarded tenders worth billions for COVID-19 supplies. Several officials implicated in procurement irregularities. Loss of public funds estimated at KSh 7.8 billion.",
+      "date": "2023-05-15",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "2",
+      "type": "Fund mismanagement",
+      "title": "NYS Scandal Phase 2",
+      "responsibleName": "Richard Ndubai",
+      "responsiblePosition": "Former NYS Director",
+      "jurisdiction": "047-Nairobi",
+      "description": "Fresh audit shows KSh 9 billion lost through fictitious invoices and ghost projects. Several senior government officials implicated. Case currently in court.",
+      "date": "2023-06-22",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "3",
+      "type": "Stalled Project",
+      "title": "Galana Kulalu Irrigation Project",
+      "responsibleName": "Eugene Wamalwa",
+      "responsiblePosition": "Former Water CS",
+      "jurisdiction": "003-Kilifi",
+      "description": "KSh 7.2 billion project stalled despite massive investment. Only 10,000 acres developed instead of planned 1 million. Farmers left without water.",
+      "date": "2023-04-10",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "4",
+      "type": "Scandal/illegality",
+      "title": "Gold Smuggling at JKIA",
+      "responsibleName": "Several unnamed officials",
+      "responsiblePosition": "Customs and KRA officers",
+      "jurisdiction": "047-Nairobi",
+      "description": "Investigation reveals gold worth billions smuggled through JKIA with alleged collusion of customs officials. Dubai-based traders implicated.",
+      "date": "2023-07-05",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "5",
+      "type": "Corruption",
+      "title": "KPLC Transformer Scandal",
+      "responsibleName": "Ben Chumo",
+      "responsiblePosition": "Former KPLC CEO",
+      "jurisdiction": "047-Nairobi",
+      "description": "KSh 400 million lost in procurement of faulty transformers. Several senior managers charged in court. Power blackouts persist.",
+      "date": "2023-03-18",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "6",
+      "type": "Fund mismanagement",
+      "title": "County Ward Fund Misuse",
+      "responsibleName": "Governor Ali Roba",
+      "responsiblePosition": "Mandera Governor",
+      "jurisdiction": "009-Mandera",
+      "description": "Auditor General reports KSh 1.2 billion ward funds unaccounted for. Projects not implemented as planned. Residents protest poor services.",
+      "date": "2023-08-12",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "7",
+      "type": "Stalled Project",
+      "title": "Thwake Dam Delays",
+      "responsibleName": "Simon Chelugui",
+      "responsiblePosition": "Water CS",
+      "jurisdiction": "017-Makueni",
+      "description": "KSh 80 billion dam project behind schedule by 3 years. Contractor disputes blamed. Water shortage persists in lower Eastern.",
+      "date": "2023-02-28",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "8",
+      "type": "Scandal/illegality",
+      "title": "Sugar Importation Scandal",
+      "responsibleName": "Adan Mohamed",
+      "responsiblePosition": "Former EAC CS",
+      "jurisdiction": "001-Mombasa",
+      "description": "Illegal sugar imports with high mercury content discovered. Several companies implicated in tax evasion. Health concerns raised.",
+      "date": "2023-09-15",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "9",
+      "type": "Corruption",
+      "title": "NHIF Fraud Scheme",
+      "responsibleName": "Nicodemus Odongo",
+      "responsiblePosition": "Former NHIF CEO",
+      "jurisdiction": "047-Nairobi",
+      "description": "Investigation reveals KSh 5 billion lost through fraudulent claims by hospitals. Fake patients and procedures reported. Several arrests made.",
+      "date": "2023-01-20",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "10",
+      "type": "Fund mismanagement",
+      "title": "County Revenue Leakage",
+      "responsibleName": "Governor Mike Sonko",
+      "responsiblePosition": "Former Nairobi Governor",
+      "jurisdiction": "047-Nairobi",
+      "description": "Audit shows KSh 3 billion county revenue unaccounted for. Cash collected but not banked. Several revenue clerks suspended.",
+      "date": "2023-10-05",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    },
+    {
+      "id": "a441",
+      "type": "Scandal/illegality",
+      "title": "Blood Money",
+      "responsibleName": "Sakaja Johnson",
+      "responsiblePosition": "Governor",
+      "jurisdiction": "047-Nairobi",
+      "description": "<p>Goons Paid:</p><ol><li>Swaleh <strong>Sonko</strong></li><li><em><u>Gaucho</u></em></li></ol>",
+      "date": "2025-06-27T13:07:38.960Z",
+      "reporterName": "Kinyanjui",
+      "reporterEmail": "kk@k.ke"
+    },
+    {
+      "id": "66c5",
+      "type": "Corruption",
+      "title": "Bribed Officer",
+      "responsibleName": "John Pombe",
+      "responsiblePosition": "OCS Kabete",
+      "jurisdiction": "022-Kiambu",
+      "description": "<p><strong>Demanded</strong> a bribe from me for driving without <u>carrying</u> my<em> driver's licence.</em></p><p><br></p><ol><li>Why</li><li><a href=\"kk.ck.w\" target=\"_blank\">How?</a></li></ol>",
+      "date": "2025-06-28T10:42:31.660Z",
+      "reporterName": "Anonymous",
+      "reporterEmail": ""
+    }
+  ]
+}
