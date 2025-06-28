@@ -40,11 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /**
-     * Sanitize HTML to prevent XSS attacks
-     * @param {string} html - Input HTML to sanitize
-     * @return {string} Sanitized HTML
-     */
+    //sanitize HTML to prevent XSS attacks
     function sanitizeHTML(html) {
         const allowedTags = ['p', 'strong', 'em', 'u', 'ol', 'ul', 'li', 'a'];
         const temp = document.createElement('div');
@@ -61,9 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return temp.innerHTML;
     }
 
-    /**
-     * Initialize Quill rich text editor
-     */
+    //initialize Quill rich text editor
     function initQuillEditor() {
         const quill = new Quill('#description-editor', {
             theme: 'snow',
@@ -79,9 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return quill;
     }
 
-    /**
-     * Load counties data from JSON file
-     */
+    //load counties data from counties.json file
     function loadCounties() {
         fetch('./counties.json')
             .then(function(response) {
@@ -99,10 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    /**
-     * Populate county dropdowns in form and filters
-     * @param {Array} counties - Array of county names
-     */
+    //county dropdowns in form and filters
     function populateCountyDropdowns(counties) {
         jurisdictionSelect.innerHTML = '<option value="">Select county</option>';
         countyFilter.innerHTML = '<option value="">Filter by County</option>';
@@ -120,9 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /**
-     * Load reports data from server
-     */
+    //load reports data from json server
     function loadReports() {
         fetch(`${API_BASE_URL}/reports`)
             .then(function(response) {
@@ -143,9 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    /**
-     * Update slideshow with current report data
-     */
+    //update slideshow with current report data
     function updateSlideshow() {
         if (reports.length === 0) {
             showEmptyState();
@@ -166,19 +151,14 @@ document.addEventListener('DOMContentLoaded', function() {
         slide.querySelector('.slide-reporter').textContent = report.reporterName || 'Anonymous';
     }
 
-    /**
-     * Show empty state when no reports are available
-     */
+    //show empty state when no reports are available
     function showEmptyState() {
         const slide = document.querySelector('.slide.active');
         slide.querySelector('.slide-title').textContent = 'No reports available';
         slide.querySelector('.slide-description').textContent = 'There are currently no reports to display.';
     }
 
-    /**
-     * Update the report list display
-     * @param {Array} filteredReports - Optional filtered reports to display
-     */
+    //report list display
     function updateReportList(filteredReports) {
         const reportList = document.querySelector('.report-list');
         reportList.innerHTML = '';
@@ -210,9 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /**
-     * Populate responsible person filter dropdown
-     */
+    //responsible person filter dropdown
     function populateResponsibleFilter() {
         const responsibleFilter = document.getElementById('responsible-filter');
         responsibleFilter.innerHTML = '<option value="">Filter by Responsible Person</option>';
@@ -233,9 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /**
-     * Apply all active filters to reports
-     */
+    //apply all active filters to reports
     function applyFilters() {
         const dateFilter = document.getElementById('date-filter').value;
         const countyFilterValue = document.getElementById('county-filter').value;
@@ -268,10 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateReportList(filteredReports);
     }
 
-    /**
-     * Handle form submission
-     * @param {Event} e - Form submit event
-     */
+    //form submission
     function handleFormSubmit(e) {
         e.preventDefault();
         
@@ -320,27 +293,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /**
-     * Show success message
-     * @param {string} message - Success message to display
-     */
+    //success message
     function showSuccess(message) {
         alert(message); // Replace with a proper notification system
     }
 
-    /**
-     * Show error message
-     * @param {string} message - Error message to display
-     */
+    //error message
     function showError(message) {
         alert(message); // Replace with a proper notification system
     }
 
-    /**
-     * Set up all event listeners
-     */
+    //event listeners
     function setupEventListeners() {
-        // Slideshow navigation
+        //slideshow navigation
         document.querySelector('.slide-nav .prev').addEventListener('click', function() {
             currentSlide = (currentSlide - 1 + reports.length) % reports.length;
             updateSlideshow();
@@ -351,23 +316,23 @@ document.addEventListener('DOMContentLoaded', function() {
             updateSlideshow();
         });
 
-        // Filters
+        //report filters
         document.getElementById('date-filter').addEventListener('change', applyFilters);
         document.getElementById('county-filter').addEventListener('change', applyFilters);
         document.getElementById('responsible-filter').addEventListener('change', applyFilters);
 
-        // Form submission
+        //form submission
         reportForm.addEventListener('submit', handleFormSubmit);
 
-        // Anonymous toggle
+        //anonymous toggle
         anonymousToggle.addEventListener('change', toggleUserDetails);
     }
 
-    // Initialize the application
+    //initialize application
     initHeroCarousel();
     const quill = initQuillEditor();
     setupEventListeners();
     loadCounties();
     loadReports();
-    toggleUserDetails(); // Initialize user details visibility
+    toggleUserDetails();
 });
