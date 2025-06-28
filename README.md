@@ -1,6 +1,6 @@
-# Expozee - A Governance Accountability Tracker
-
 ![Expozee Logo](./uploads/expozee_purple.png)
+
+# Expozee - A Governance Accountability Tracker
 
 ## Presentation Video
 
