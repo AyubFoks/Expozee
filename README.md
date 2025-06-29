@@ -4,7 +4,7 @@
 
 ## Presentation Video
 
-[Watch the presentation](./uploads/demo.mp4)
+[Watch the presentation](https://www.dropbox.com/scl/fi/t7cofvr5omctwhvs3hpsq/Expozee-demo.mp4?rlkey=ngwhs16bmziupyjl6axktw8kn&st=yvuzj36v&dl=0)
 
 ## Project Description
 
